@@ -1,0 +1,111 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: 'Arial', sans-serif;
+  overflow: auto; /* Enable scrolling for the entire page */
+}
+
+.background {
+  position: relative;
+  min-height: 100%; /* Ensure the background expands to fit content */
+  background: url() no-repeat center center;
+  background-size: cover;
+}
+
+.overlay {
+  position: fixed; /* Change to fixed to cover the entire viewport */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 255, 0.25); /* Blue overlay effect */
+  pointer-events: none; /* Prevent interactions with the overlay */
+}
+
+.content {
+  position: relative;
+  width: 90%; /* Make the content fit better within the viewport */
+  max-width: 800px;
+  margin: 20px auto;
+  text-align: center;
+  color: black;
+  padding: 15px;
+  box-sizing: border-box;
+  overflow: hidden; /* Prevent horizontal overflow */
+}
+
+/* Styling for typewriter1 (H1) */
+h1#typewriter1 {
+  font-size: 2rem;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  color: black;
+}
+
+/* Styling for typewriter2 (P) */
+p#typewriter2 {
+  text-align: left;
+  font-size: 1.5rem;
+  margin: 20px auto;
+  color: black;
+  white-space: pre-wrap; /* Preserve line breaks */
+  word-wrap: break-word; /* Break long words */
+  overflow: hidden;
+  width: 100%;
+  height: auto;
+  border-right: 2px solid white; /* Cursor effect */
+}
+
+/* Typewriter effect animation for P */
+@keyframes typewriter2 {
+  from {
+    max-height: 0;
+  }
+  to {
+    max-height: 100%; /* Gradually reveal the text */
+  }
+}
+
+/* Cursor blink animation */
+@keyframes blink {
+  from {
+    border-color: transparent;
+  }
+  to {
+    border-color: white;
+  }
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  h1#typewriter1 {
+    font-size: 1.5rem;
+  }
+
+  p#typewriter2 {
+    font-size: 1.2rem;
+  }
+
+  .content {
+    width: 95%;
+  }
+}
+
+@media (max-width: 480px) {
+  h1#typewriter1 {
+    font-size: 1rem;
+  }
+
+  p#typewriter2 {
+    font-size: 0.8rem;
+  }
+
+  .content {
+    width: 100%;
+    padding: 10px;
+  }
+}
